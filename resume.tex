@@ -82,7 +82,9 @@
 \titlespacing{\section}{0pt}{10pt}{10pt}
 
 %for publications
-\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
+\usepackage[style=authoryear,sorting=ynt, maxbibnames=4, dashed=false]{biblatex}
+\DeclareFieldFormat{extradate}{} %Added to get rid of suffix letter after year (2022a -> 2022)
+\DeclareNameAlias{sortname}{first-last} %Added to have consistent arrangement of authors' names
 
 %Setup hyperref package, and colours for links
 \usepackage[unicode, draft=false]{hyperref}
@@ -131,6 +133,8 @@
 %Interests/ Keywords/ Summary
 \section{Summary}
 I received the engineering degree in computer science from the National Institute of Applied Sciences (INSA Rennes, France), and the M.Sc. degree in reseach in computer science from the University of Rennes 1 (Rennes, France), in 2020. I am currently pursuing the Ph.D. degree with INSA Rennes, IETR (Rennes, France) and b$<>$com (Rennes, France). My current research topics include signal processing, wireless communications and machine learning.
+% I'm particularly interested in applying deep learning techniques to the PHY layer of wireless systems.
+Additionally, I have interest in broader AI topics such as computer vision and NLP.
 
 %Experience
 \section{Work Experience}
@@ -181,8 +185,9 @@ Developped a deep learning model for channel estimation in the context of massiv
 %----------------------------------------------------------------------------------------
 \section{Skills}
 \begin{tabularx}{\linewidth}{@{}l X@{}}
-Programming &  \normalsize{Python, Java, C/C++.}\\
-Frameworks/Libraries  &  \normalsize{PyTorch, NumPy, Matplotlib.}\\  
+Programming &  \normalsize{Python, Java, C/C++, Bash.}\\
+Frameworks/Libraries &  \normalsize{PyTorch, NumPy, scikit-learn, SciPy, Sionna, Matplotlib, Bokeh.}\\  
+Other &  \normalsize{Docker.}
 \end{tabularx}
 
 \vfill
