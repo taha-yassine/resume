@@ -82,7 +82,7 @@
 \titlespacing{\section}{0pt}{10pt}{10pt}
 
 %for publications
-\usepackage[style=authoryear,sorting=ynt, maxbibnames=4, dashed=false]{biblatex}
+\usepackage[style=authoryear,sorting=ynt, maxbibnames=4, dashed=false, doi=false]{biblatex}
 \DeclareFieldFormat{extradate}{} %Added to get rid of suffix letter after year (2022a -> 2022)
 \DeclareNameAlias{sortname}{first-last} %Added to have consistent arrangement of authors' names
 
@@ -119,11 +119,11 @@
 
 \begin{tabularx}{\linewidth}{@{} C @{}}
 \Huge{Taha YASSINE} \\[7.5pt]
-\href{https://github.com/taha-yassine}{\raisebox{-0.05\height}\faGithub\ Taha YASSINE} \ $|$ \ 
+\href{https://github.com/taha-yassine}{\raisebox{-0.05\height}\faGithub\ taha-yassine} \ $|$ \ 
 \href{https://linkedin.com/in/taha-yassine}{\raisebox{-0.05\height}\faLinkedin\ Taha YASSINE} \ $|$ \ 
 \href{https://tahayassine.me}{\raisebox{-0.05\height}\faGlobe \ tahayassine.me} \ $|$ \ 
-\href{mailto:taha.yssne@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ taha.yssne@gmail.com} \ $|$ \ 
-\href{tel:+33621835865}{\raisebox{-0.05\height}\faMobile \ +33 6 21 83 58 65} \\
+\href{mailto:taha.yssne@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ taha.yssne@gmail.com} \\ 
+% \href{tel:+33621835865}{\raisebox{-0.05\height}\faMobile \ +33 6 21 83 58 65} \\
 \end{tabularx}
 
 %----------------------------------------------------------------------------------------
@@ -132,22 +132,23 @@
 
 %Interests/ Keywords/ Summary
 \section{Summary}
-I received the engineering degree in computer science from the National Institute of Applied Sciences (INSA Rennes, France), and the M.Sc. degree in reseach in computer science from the University of Rennes 1 (Rennes, France), in 2020. I am currently pursuing the Ph.D. degree with INSA Rennes, IETR (Rennes, France) and b$<>$com (Rennes, France). My current research topics include signal processing, wireless communications and machine learning.
+I received the PhD degree in machine learning and wireless communications from he National Institute of Applied Sciences (INSA Rennes, France). My research topics included \emph{signal processing}, \emph{wireless communications} and \emph{machine learning}.
+
+I'm currently interested in applications of \emph{generative AI}, specifically \emph{Large Language Models} (LLMs) and \emph{computer vision}. I have experimented with building chatbots using retrieval-augmented generation (RAG) techniques.
 % I'm particularly interested in applying deep learning techniques to the PHY layer of wireless systems.
-Additionally, I have interest in broader AI topics such as computer vision and NLP.
 
 %Experience
 \section{Work Experience}
 
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{PhD student (b$〈〉$com)} & \hfill Oct. 2020 - present \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{Propose and develop deep learning models for different physical level tasks (channel estimation, beamforming, channel charting...) in the context of massive MIMO systems. The models are inspired and guided by principles derived from signal processing and wireless communications theory. Produce papers presenting the work.}  \\
+\textbf{PhD student} | \textit{b$〈〉$com, IETR} & \hfill Oct. 2020 - Apr. 2024 \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{Proposed and developed deep learning models for different physical level tasks (channel estimation, beamforming, channel charting...) in the context of massive MIMO systems. The models are inspired and guided by principles derived from signal processing and wireless communications theory. Produce papers presenting the work.}  \\
 \end{tabularx}
 
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Research internship (b$〈〉$com)} & \hfill Feb. 2020 - July 2020 \\[3.75pt]
+\textbf{Research internship} | \textit{b$〈〉$com} & \hfill Feb. - July 2020 \\[3.75pt]
 \multicolumn{2}{@{}X@{}}{
-Developped a deep learning model for channel estimation in the context of massive MIMO systems. The internship was a great introduction to doing research and an opportunity to get a foot in the door. Produced a paper presenting the work as well.
+Developed a deep learning model for channel estimation in the context of massive MIMO systems. The internship was a great introduction to doing research and an opportunity to get a foot in the door. Produced a paper presenting the work as well.
 }
 \end{tabularx}
 
@@ -164,11 +165,13 @@ Developped a deep learning model for channel estimation in the context of massiv
 %----------------------------------------------------------------------------------------
 \section{Education}
 \begin{tabularx}{\linewidth}{@{}l X@{}}	
-2020 - present & PhD in wireless communications and machine learning with \textbf{INSA Rennes}, \textbf{IETR} and \textbf{b$<>$com} \\
-
-2019 & Erasmus exchange at \textbf{Newcastle University}\\
+2020 - 2024 & PhD in machine learning and wireless communications with \textbf{INSA Rennes}, \textbf{IETR} and \textbf{b$<>$com} \\
 
 2015 - 2020 & Engineering degree in computer science at \textbf{INSA Rennes}\\
+
+2019 - 2020 & M.S in research in computer science (SIF) at \textbf{INSA Rennes}\\
+
+2019 & Erasmus exchange at \textbf{Newcastle University}\\
 \end{tabularx}
 
 %----------------------------------------------------------------------------------------
@@ -185,9 +188,9 @@ Developped a deep learning model for channel estimation in the context of massiv
 %----------------------------------------------------------------------------------------
 \section{Skills}
 \begin{tabularx}{\linewidth}{@{}l X@{}}
-Programming &  \normalsize{Python, Java, C/C++, Bash.}\\
-Frameworks/Libraries &  \normalsize{PyTorch, NumPy, scikit-learn, SciPy, Sionna, Matplotlib, Bokeh.}\\  
-Other &  \normalsize{Docker.}
+Programming &  \normalsize{Python, Java, C/C++, Bash, Nix, JavaScript, PHP.}\\
+Frameworks/Libraries &  \normalsize{PyTorch, NumPy, Transformers, SentenceTransformers, LangChain, scikit-learn, SciPy, Sionna, Matplotlib, Bokeh.}\\  
+Other &  \normalsize{Docker, \LaTeX, Linux, Git, Jupyter.}
 \end{tabularx}
 
 \vfill
