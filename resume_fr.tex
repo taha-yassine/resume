@@ -1,0 +1,199 @@
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+%	The MIT License (MIT)
+%
+%	Copyright (c) 2021 Jitin Nair
+%
+%	Permission is hereby granted, free of charge, to any person obtaining a copy
+%	of this software and associated documentation files (the "Software"), to deal
+%	in the Software without restriction, including without limitation the rights
+%	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+%	copies of the Software, and to permit persons to whom the Software is
+%	furnished to do so, subject to the following conditions:
+%	
+%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+%	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+%	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+%	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+%	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+%	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+%	THE SOFTWARE.
+%	
+%
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+
+%----------------------------------------------------------------------------------------
+%	DÉFINITION DU DOCUMENT
+%----------------------------------------------------------------------------------------
+
+% classe article car nous voulons personnaliser complètement la page et ne pas utiliser un modèle de CV
+\documentclass[a4paper,12pt]{article}
+
+%----------------------------------------------------------------------------------------
+%	POLICE
+%----------------------------------------------------------------------------------------
+
+% % fontspec permet d'utiliser directement les polices TTF/OTF
+% \usepackage{fontspec}
+% \defaultfontfeatures{Ligatures=TeX}
+
+% % modifié pour une utilisation avec ShareLaTeX
+% \setmainfont[
+% SmallCapsFont = Fontin-SmallCaps.otf,
+% BoldFont = Fontin-Bold.otf,
+% ItalicFont = Fontin-Italic.otf
+% ]
+% {Fontin.otf}
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES
+%----------------------------------------------------------------------------------------
+\usepackage{url}
+\usepackage{parskip} 	
+
+%autres packages pour la mise en forme
+\RequirePackage{color}
+\RequirePackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[scale=0.9]{geometry}
+
+%environnement tabularx
+\usepackage{tabularx}
+
+%pour les listes dans la section expérience
+\usepackage{enumitem}
+
+% version centrée du type de colonne 'X'
+\newcolumntype{C}{>{\centering\arraybackslash}X} 
+
+%pour éviter le débordement du tableau sur les pages suivantes
+\usepackage{supertabular}
+\usepackage{tabularx}
+\newlength{\fullcollw}
+\setlength{\fullcollw}{0.47\textwidth}
+
+%\section personnalisée
+\usepackage{titlesec}				
+\usepackage{multicol}
+\usepackage{multirow}
+
+%Sections du CV inspirées par : 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{10pt}{10pt}
+
+%pour les publications
+\usepackage[style=authoryear,sorting=ynt, maxbibnames=4, dashed=false, doi=false]{biblatex}
+\DeclareFieldFormat{extradate}{} %Ajouté pour supprimer la lettre de suffixe après l'année (2022a -> 2022)
+\DeclareNameAlias{sortname}{first-last} %Ajouté pour avoir un arrangement cohérent des noms d'auteurs
+
+%Configuration du package hyperref et des couleurs pour les liens
+\usepackage[unicode, draft=false]{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+\addbibresource{citations.bib}
+\setlength\bibitemsep{1em}
+
+%pour les icônes sociales
+\usepackage{fontawesome5}
+
+%déboguer les cadres extérieurs de la page
+%\usepackage{showframe}
+
+%----------------------------------------------------------------------------------------
+%	DÉBUT DU DOCUMENT
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+% pages non numérotées
+\pagestyle{empty} 
+
+%----------------------------------------------------------------------------------------
+%	TITRE
+%----------------------------------------------------------------------------------------
+
+% \begin{tabularx}{\linewidth}{ @{}X X@{} }
+% \huge{Votre nom}\vspace{2pt} & \hfill \emoji{incoming-envelope} email@email.com \\
+% \raisebox{-0.05\height}\faGithub\ nom d'utilisateur \ | \
+% \raisebox{-0.00\height}\faLinkedin\ nom d'utilisateur \ | \ \raisebox{-0.05\height}\faGlobe \ monsite.com  & \hfill \emoji{calling} numéro
+% \end{tabularx}
+
+\begin{tabularx}{\linewidth}{@{} C @{}}
+\Huge{Taha YASSINE} \\[7.5pt]
+\href{https://github.com/taha-yassine}{\raisebox{-0.05\height}\faGithub\ taha-yassine} \ $|$ \ 
+\href{https://linkedin.com/in/taha-yassine}{\raisebox{-0.05\height}\faLinkedin\ Taha YASSINE} \ $|$ \ 
+\href{https://tahayassine.me}{\raisebox{-0.05\height}\faGlobe \ tahayassine.me} \ $|$ \ 
+\href{mailto:taha.yssne@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ taha.yssne@gmail.com} \\ 
+% \href{tel:+33621835865}{\raisebox{-0.05\height}\faMobile \ +33 6 21 83 58 65} \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+% SECTIONS D'EXPÉRIENCE
+%----------------------------------------------------------------------------------------
+
+%Intérêts/ Mots-clés/ Résumé
+\section{Résumé}
+J'ai obtenu mon doctorat en apprentissage automatique et communications sans fil à l'Institut National des Sciences Appliquées (INSA Rennes, France). Mes sujets de recherche comprenaient le \emph{traitement du signal}, les \emph{communications sans fil} et l'\emph{apprentissage automatique}.
+
+Je m'intéresse actuellement aux applications de l'\emph{IA générative}, en particulier aux \emph{grands modèles de langage} (LLM) et à la \emph{vision par ordinateur}. J'ai de l'expérience en mise en place de chatbots en utilisant des techniques de \emph{retrieval augmented generation} (RAG).
+% Je suis particulièrement intéressé par l'application de techniques d'apprentissage profond à la couche PHY des systèmes sans fil.
+
+%Expérience
+\section{Expérience professionnelle}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Doctorant} | \textit{b$〈〉$com, IETR} & \hfill Oct. 2020 - Avr. 2024 \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{J'ai proposé et développé des modèles d'apprentissage profond pour différentes tâches de la couche physique (estimation de canal, formation de faisceaux, cartographie de canal...) dans le contexte des systèmes MIMO massifs. Les modèles sont inspirés et guidés par des principes dérivés de la théorie du traitement du signal et des communications sans fil. J'ai écrit des articles scientifiques présentant le travail.}  \\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Stage de recherche} | \textit{b$〈〉$com} & \hfill Fév. - Juil. 2020 \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+J'ai développé un modèle d'apprentissage profond pour l'estimation de canal dans le contexte des systèmes MIMO massifs. Le stage a été une excellente introduction à la recherche. J'ai également également écrit un article scientifique présentant le travail.
+}
+\end{tabularx}
+
+%Projets
+% \section{Projets}
+
+% \begin{tabularx}{\linewidth}{ @{}l r@{} }
+% \textbf{Un projet} & \hfill \href{https://lien-demo.com}{Lien vers la démo} \\[3.75pt]
+% \multicolumn{2}{@{}X@{}}{longue ligne de blabla qui s'enroulera lorsque la table remplira la largeur de la colonne longue ligne de blabla qui s'enroulera lorsque la table remplira la largeur de la colonne longue ligne de blabla qui s'enroulera lorsque la table remplira la largeur de la colonne longue ligne de blabla qui s'enroulera lorsque la table remplira la largeur de la colonne}  \\
+% \end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	FORMATION
+%----------------------------------------------------------------------------------------
+\section{Formation}
+\begin{tabularx}{\linewidth}{@{}l X@{}}	
+2020 - 2024 & Doctorat en apprentissage automatique et communications sans fil à l'\textbf{INSA Rennes}, \textbf{IETR} et \textbf{b$<>$com} \\
+
+2015 - 2020 & Diplôme d'ingénieur en informatique à l'\textbf{INSA Rennes}\\
+
+2019 - 2020 & Master recherche en informatique (SIF) à l'\textbf{INSA Rennes}\\
+
+2019 & Échange Erasmus à l'\textbf{Université de Newcastle}\\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	PUBLICATIONS
+%----------------------------------------------------------------------------------------
+\section{Publications}
+\begin{refsection}[citations.bib]
+\nocite{*}
+\printbibliography[heading=none]
+\end{refsection}
+
+%----------------------------------------------------------------------------------------
+%	COMPÉTENCES
+%----------------------------------------------------------------------------------------
+\section{Compétences}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+Programmation &  \normalsize{Python, Java, C/C++, Bash, Nix, JavaScript, PHP.}\\
+Frameworks/Bibliothèques &  \normalsize{PyTorch, NumPy, Transformers, SentenceTransformers, LangChain, scikit-learn, SciPy, Sionna, Matplotlib, Bokeh.}\\  
+Autres &  \normalsize{Docker, \LaTeX, Linux, Git, Jupyter.}
+\end{tabularx}
+
+\vfill
+\center{\footnotesize Dernière mise à jour : \today}
+
+\end{document}
